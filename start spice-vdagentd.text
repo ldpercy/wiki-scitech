@@ -2,8 +2,8 @@
 # Necessary for getting window resizing and shared clipboard working in virt-manager
 # Add this to .profile:
 
-svd_check=`ps ax | grep [s]pice-vdagentd | wc -l`
-if [ $svd_check -eq 0 ]; then
+svd_check=$(pgrep --count '[s]pice-vdagentd')
+if [ "$svd_check" -eq 0 ]; then
     echo "spice-vdagentd not running; starting now..."
     service spice-vdagent start
     spice-vdagent
