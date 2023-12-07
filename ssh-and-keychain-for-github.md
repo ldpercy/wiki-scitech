@@ -7,7 +7,7 @@ This process will create ssh authentication and signing keys for github with the
 
 We'll also install and setup keychain to automatically make these available on a per-local-login basis.
 
-N.B. This is for Github, but the process for Gitlab is virtually identical
+N.B. Although this is intended for Github, the process for Gitlab is virtually identical
 
 ## Create authentication and signing ssh keys
 Each of these will ask for a location & passphrase.
