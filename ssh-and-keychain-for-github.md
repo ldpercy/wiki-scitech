@@ -1,7 +1,13 @@
 # ssh & keychain for Gitub
 
-This is for Github, but the process for Gitlab is virtually identical
+This process will create ssh authentication and signing keys for github with the following names:
 
+	authentication-key
+	signing-key
+
+We'll also install and setup keychain to automatically make these available on a per-local-login basis.
+
+N.B. This is for Github, but the process for Gitlab is virtually identical
 
 ## Create authentication and signing ssh keys
 Each of these will ask for a location & passphrase.
@@ -12,7 +18,7 @@ Keyfiles go into ~/.ssh/
 
 	ssh-keygen -t ed25519 -C "signing-key"
 
-Two files are created for each key (4 in total)
+Public and private keyfiles are created for each key (4 files in total)
 
 	~/.ssh/authentication-key
 	~/.ssh/authentication-key.pub
@@ -20,14 +26,12 @@ Two files are created for each key (4 in total)
 	~/.ssh/signing-key.pub
 
 ## Create ssh config file for authentication with github.com
-This file is saved as ~/.ssh/config
+Save the following text as ~/.ssh/config
 
-	# Default GitHub
+	# GitHub
 	Host github.com
-		HostName github.com
-		PreferredAuthentications publickey
-		IdentityFile ~/.ssh/authentication-key
-
+	  PreferredAuthentications publickey
+	  IdentityFile ~/.ssh/authentication-key
 
 
 
@@ -51,13 +55,11 @@ Add the following to .bashrc
 
 
 
-
 ## Add keys to github
 
 Log into your github account and head to https://github.com/settings/keys
 
 Add the authentication and signing ssh keys (.pub files), taking care to specify the key type for each correctly.
-
 
 
 
