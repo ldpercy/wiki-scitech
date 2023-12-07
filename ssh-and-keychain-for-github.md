@@ -44,6 +44,9 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 
 	git config --global user.signingkey ~/.ssh/signing-key.pub
 
+	git config --global commit.gpgsign true
+
+
 
 ## Keychain install and run
 
