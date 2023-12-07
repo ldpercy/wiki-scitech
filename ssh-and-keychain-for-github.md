@@ -10,20 +10,20 @@ We'll also install and setup keychain to automatically make these available on a
 N.B. Although this is intended for Github, the process for Gitlab is virtually identical
 
 ## Create authentication and signing ssh keys
-Each of these will ask for a location & passphrase.
+Each of these will ask for a passphrase.
 
 Keyfiles go into ~/.ssh/
 
-	ssh-keygen -t ed25519 -C "authentication-key"
+	ssh-keygen  -t ed25519  -f ~/.ssh/authentication-key  -C "key for authenticating with github"
 
-	ssh-keygen -t ed25519 -C "signing-key"
+	ssh-keygen  -t ed25519  -f ~/.ssh/signing-key  -C "key for signing commits"
 
-Public and private keyfiles are created for each key (4 files in total)
+Private and public keyfiles are created for each key:
 
-	~/.ssh/authentication-key
-	~/.ssh/authentication-key.pub
-	~/.ssh/signing-key
-	~/.ssh/signing-key.pub
+-	~/.ssh/authentication-key
+-	~/.ssh/authentication-key.pub
+-	~/.ssh/signing-key
+-	~/.ssh/signing-key.pub
 
 ## Create ssh config file for authentication with github.com
 Save the following text as ~/.ssh/config
