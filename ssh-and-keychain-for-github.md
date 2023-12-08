@@ -18,12 +18,12 @@ Keyfiles go into ~/.ssh/
 
 	ssh-keygen  -t ed25519  -f ~/.ssh/signing-key  -C "key for signing commits"
 
-Private and public keyfiles are created for each key:
+Private and public keyfiles are created for each key in ~/.ssh/:
 
--	~/.ssh/authentication-key
--	~/.ssh/authentication-key.pub
--	~/.ssh/signing-key
--	~/.ssh/signing-key.pub
+-	authentication-key
+-	authentication-key.pub
+-	signing-key
+-	signing-key.pub
 
 ## Create ssh config file for authentication with github.com
 Save the following text as ~/.ssh/config
