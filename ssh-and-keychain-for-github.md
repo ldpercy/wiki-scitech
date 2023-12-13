@@ -9,14 +9,14 @@ We'll also install and setup keychain to automatically make these available on a
 
 N.B. Although this is intended for Github, the process for Gitlab is virtually identical.
 
-1. Create the authentication and signing ssh keys
-2. Create ssh config file for authentication with github
-3. Set local git to use the signing key
-4. Setup keychain to load the ssh keys
-5. Add keys to github
+1. [Create the authentication and signing ssh keys](#create-keys)
+2. [Create ssh config file for authentication with github](#create-ssh-config)
+3. [Set local git to use the signing key](#git-signing)
+4. [Setup keychain to load the ssh keys](#setup-keychain)
+5. [Add keys to github](#github-keys)
 
 
-## Create authentication and signing ssh keys
+## Create authentication and signing ssh keys {#create-keys}
 Each of these will ask for a passphrase.
 
 Keyfiles go into ~/.ssh/
@@ -32,7 +32,7 @@ Private and public keyfiles are created for each key in ~/.ssh/:
 -	signing-key
 -	signing-key.pub
 
-## Create ssh config file for authentication with github.com
+## Create ssh config file for authentication with github.com {#create-ssh-config}
 Save the following text as ~/.ssh/config
 
 	# GitHub
@@ -42,7 +42,7 @@ Save the following text as ~/.ssh/config
 
 
 
-## Set local git to use signing key
+## Set local git to use signing key {#git-signing}
 https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key
 
 
@@ -54,7 +54,7 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 
 
 
-## Keychain install and run
+## Keychain install and run {#keychain-setup}
 Main documentation: https://www.funtoo.org/Funtoo:Keychain 
 
 A couple of very helpful youtube vids:  https://www.youtube.com/watch?v=XRdybTxW8K4  https://www.youtube.com/watch?v=qirOF6NQc00
@@ -71,7 +71,7 @@ This will now prompt for your passphrase the first time you open a terminal per 
 
 
 
-## Add keys to github
+## Add keys to github {#github-keys}
 
 Log into your github account and head to https://github.com/settings/keys
 
