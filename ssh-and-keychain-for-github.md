@@ -1,4 +1,4 @@
-# ssh & keychain for Gitub
+# ssh & keychain for Github
 
 This process will create ssh authentication and signing keys for github with the following names:
 
@@ -7,7 +7,14 @@ This process will create ssh authentication and signing keys for github with the
 
 We'll also install and setup keychain to automatically make these available on a per-local-login basis.
 
-N.B. Although this is intended for Github, the process for Gitlab is virtually identical
+N.B. Although this is intended for Github, the process for Gitlab is virtually identical.
+
+1. Create the authentication and signing ssh keys
+2. Create ssh config file for authentication with github
+3. Set local git to use the signing key
+4. Setup keychain to load the ssh keys
+5. Add keys to github
+
 
 ## Create authentication and signing ssh keys
 Each of these will ask for a passphrase.
@@ -35,7 +42,6 @@ Save the following text as ~/.ssh/config
 
 
 
-
 ## Set local git to use signing key
 https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key
 
@@ -49,12 +55,19 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 
 
 ## Keychain install and run
+Main documentation: https://www.funtoo.org/Funtoo:Keychain 
+
+A couple of very helpful youtube vids:  https://www.youtube.com/watch?v=XRdybTxW8K4  https://www.youtube.com/watch?v=qirOF6NQc00
+
 
 	sudo apt install keychain
 
 Add the following to .bashrc
 
 	eval 'keychain --agents ssh --eval ~/.ssh/authentication-key ~/.ssh/signing-key'
+
+
+This will now prompt for your passphrase the first time you open a terminal per your local user login (to make the keys available for authentication and signing). If you don't need these often keep the eval line as a snippet or set an alias.
 
 
 
