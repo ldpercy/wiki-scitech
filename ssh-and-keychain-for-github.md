@@ -1,4 +1,5 @@
-# ssh & keychain for Github
+ssh & keychain for Github
+=========================
 
 This process will create ssh authentication and signing keys for github with the following names:
 
@@ -16,7 +17,9 @@ N.B. Although this is intended for Github, the process for Gitlab is virtually i
 5. [Add keys to github](#add-keys-to-github)
 
 
-## Create authentication and signing ssh keys
+Create authentication and signing ssh keys
+------------------------------------------
+
 Each of these will ask for a passphrase.
 
 Keyfiles go into ~/.ssh/
@@ -32,7 +35,9 @@ Private and public keyfiles are created for each key in ~/.ssh/:
 -	signing-key
 -	signing-key.pub
 
-## Create ssh config file for authentication with github.com
+Create ssh config file for authentication with github.com
+---------------------------------------------------------
+
 Save the following text as ~/.ssh/config
 
 	# GitHub
@@ -42,7 +47,9 @@ Save the following text as ~/.ssh/config
 
 
 
-## Set local git to use signing key
+Set local git to use signing key
+--------------------------------
+
 https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key
 
 
@@ -54,7 +61,9 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 
 
 
-## Keychain install and run
+Keychain install and run
+------------------------
+
 Main documentation: https://www.funtoo.org/Funtoo:Keychain 
 
 A couple of very helpful youtube vids:  https://www.youtube.com/watch?v=XRdybTxW8K4  https://www.youtube.com/watch?v=qirOF6NQc00
@@ -71,7 +80,8 @@ This will now prompt for your passphrase the first time you open a terminal per 
 
 
 
-## Add keys to github
+Add keys to github
+------------------
 
 Log into your github account and head to https://github.com/settings/keys
 
