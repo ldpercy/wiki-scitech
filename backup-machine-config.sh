@@ -3,7 +3,7 @@
 # backup-machine-config
 #
 # Backs up local machine config to the specified directory
-# Only inlcudes things that require sudo/root access
+# Only includes things that require sudo/root access
 #
 #	sudo ./backup-machine-config.sh destination
 #
@@ -17,8 +17,8 @@ if [ ! -d "$destination" ]; then
 fi
 
 # Disk & partition information
-fdisk --list-details	> "$destination/fdisk-list-details.txt"
-sfdisk --list			> "$destination/sfdisk-list.txt"
+fdisk --list-details    > "$destination/fdisk-list-details.txt"
+sfdisk --list           > "$destination/sfdisk-list.txt"
 
 # System config:
 cp --recursive /etc "$destination"

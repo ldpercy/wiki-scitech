@@ -27,16 +27,16 @@ fi
 
 
 # Install lists:
-apt list --installed	> "$destination/apt-list-installed.txt"
-snap list 				> "$destination/snap-list.txt"
-flatpak list			> "$destination/flatpak-list.txt"
+apt list --installed        > "$destination/apt-list-installed.txt"
+snap list                   > "$destination/snap-list.txt"
+flatpak list                > "$destination/flatpak-list.txt"
 
 # User config:
-cp --recursive ~/.config/		"$destination"
-cp --recursive ~/.ssh/			"$destination"
-cp ~/.profile					"$destination"
-cp ~/.bashrc					"$destination"
-cp ~/.gitconfig					"$destination"
+cp --recursive ~/.config/   "$destination"
+cp --recursive ~/.ssh/      "$destination"
+cp ~/.profile               "$destination"
+cp ~/.bashrc                "$destination"
+cp ~/.gitconfig             "$destination"
 
 
 # Deletions
