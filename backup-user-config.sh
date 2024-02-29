@@ -36,11 +36,11 @@ flatpak list                > "$destination/flatpak-list.txt"
 
 shopt -s extglob
 
-cp --recursive ~/.config/   "$destination"
-cp --recursive ~/.ssh/*(config|*.pub)	"$destination/.ssh"
-cp ~/.profile               "$destination"
-cp ~/.bashrc                "$destination"
-cp ~/.gitconfig             "$destination"
+cp --recursive ~/.config/               "$destination"
+cp --recursive ~/.ssh/*(config|*.pub)   "$destination/.ssh"
+cp ~/.profile                           "$destination"
+cp ~/.bashrc                            "$destination"
+cp ~/.gitconfig                         "$destination"
 
 
 # Deletions
