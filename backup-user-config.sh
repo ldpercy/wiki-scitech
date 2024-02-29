@@ -31,9 +31,13 @@ apt list --installed        > "$destination/apt-list-installed.txt"
 snap list                   > "$destination/snap-list.txt"
 flatpak list                > "$destination/flatpak-list.txt"
 
+
 # User config:
+
+shopt -s extglob
+
 cp --recursive ~/.config/   "$destination"
-cp --recursive ~/.ssh/      "$destination"
+cp --recursive ~/.ssh/*(config|*.pub)	"$destination/.ssh"
 cp ~/.profile               "$destination"
 cp ~/.bashrc                "$destination"
 cp ~/.gitconfig             "$destination"
