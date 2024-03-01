@@ -16,6 +16,9 @@ if [ ! -d "$destination" ]; then
 	mkdir "$destination"
 fi
 
+# Host information
+hostnamectl             > "$destination/hostnamectl.txt"
+
 # Disk & partition information
 fdisk --list-details    > "$destination/fdisk-list-details.txt"
 sfdisk --list           > "$destination/sfdisk-list.txt"
