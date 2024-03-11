@@ -64,7 +64,7 @@ https://docs.github.com/en/authentication/managing-commit-signature-verification
 Keychain install and run
 ------------------------
 
-Main documentation: https://www.funtoo.org/Funtoo:Keychain 
+Main documentation: https://www.funtoo.org/Funtoo:Keychain
 
 A couple of very helpful youtube vids:  https://www.youtube.com/watch?v=XRdybTxW8K4  https://www.youtube.com/watch?v=qirOF6NQc00
 
@@ -74,6 +74,11 @@ A couple of very helpful youtube vids:  https://www.youtube.com/watch?v=XRdybTxW
 Add the following to .bashrc
 
 	eval 'keychain --agents ssh --eval ~/.ssh/authentication-key ~/.ssh/signing-key'
+
+
+### NB for Wayland sessions use this instead:
+
+	eval 'keychain --inherit any-once --agents ssh --eval ~/.ssh/authentication-key ~/.ssh/signing-key'
 
 
 This will now prompt for your passphrase the first time you open a terminal per your local user login (to make the keys available for authentication and signing). If you don't need these often keep the eval line as a snippet or set an alias.
@@ -86,6 +91,3 @@ Add keys to github
 Log into your github account and head to https://github.com/settings/keys
 
 Add the authentication and signing ssh keys (.pub files), taking care to specify the key type for each correctly.
-
-
-
