@@ -3,16 +3,21 @@ Swappiness
 
 Read current swappiness value:
 
-	cat /proc/sys/vm/swappiness
+```bash
+cat /proc/sys/vm/swappiness
+```
 
 Set temporary swappiness value:
 
-	sudo sysctl vm.swappiness=45
-
+```bash
+sudo sysctl vm.swappiness=45
+```
 
 Set permanent swappiness value - add this line to /etc/sysctl.conf:
 
-	vm.swappiness=15
+```conf
+vm.swappiness=15
+```
 
 
 Refs
