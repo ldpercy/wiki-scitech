@@ -16,12 +16,21 @@ if [ ! -d "$destination" ]; then
 	mkdir "$destination"
 fi
 
-# Host information
-hostnamectl             > "$destination/hostnamectl.txt"
+# system infomation
+hostnamectl > "$destination/hostnamectl.txt"
+
+# kernel information
+sysctl -a > "$destination/sysctl.txt"
+
 
 # Disk & partition information
-fdisk --list-details    > "$destination/fdisk-list-details.txt"
-sfdisk --list           > "$destination/sfdisk-list.txt"
+fdisk --list-details	> "$destination/fdisk-list-details.txt"
+sfdisk --list			> "$destination/sfdisk-list.txt"
+lsblk --output-all --json --sort=name > "$destination/lsblk-all.json"
 
-# System config:
+
+# etc config:
 cp --recursive /etc "$destination"
+
+# Give the current user ownership of all files. I'm unsure of the security implications of this for certain items in /etc
+chown -R $SUDO_USER:$SUDO_USER "$destination"

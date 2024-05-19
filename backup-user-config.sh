@@ -43,10 +43,11 @@ cp ~/.bashrc                            "$destination"
 cp ~/.gitconfig                         "$destination"
 
 
+# VSCodium - delete and copy in the config file
+rm --recursive "$destination/.config/VSCodium/"
+mkdir --parents "$destination/.config/VSCodium/User/"
+cp  ~/.config/VSCodium/User/settings.json "$destination/.config/VSCodium/User/"
+
 # Deletions
 #
-# rm --recursive "$destination/.config/VSCodium/"
-#
-# *.vscdb
-# *.vscdb.*
 # * .tdb
