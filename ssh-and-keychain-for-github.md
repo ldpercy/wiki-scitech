@@ -90,6 +90,7 @@ eval 'keychain --inherit any-once --agents ssh --eval ~/.ssh/authentication-key 
 ```
 
 This will now prompt for your passphrase the first time you open a terminal per your local user login (to make the keys available for authentication and signing). If you don't need these often keep the eval line as a snippet or set an alias.
+Note: this may be a moving target, behaviour changes between distros/releases.
 
 
 
