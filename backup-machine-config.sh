@@ -27,13 +27,9 @@ sysctl -a > "$destination/sysctl.txt"
 fdisk --list-details	> "$destination/fdisk-list-details.txt"
 sfdisk --list			> "$destination/sfdisk-list.txt"
 lsblk --output-all --json --sort=name > "$destination/lsblk-all.json"
+cp /etc/fstab* "$destination"
 
 
-# etc config:
-# cp --recursive /etc "$destination"
-
-# Give the current user ownership of all files. I'm unsure of the security implications of this for certain items in /etc
-# chown -R $SUDO_USER:$SUDO_USER "$destination"
-
-# So doing this is probably a really bad idea unless it's purely academic or you have *total* security of the backup...
-# Going to find a better solution
+# Other config
+cp /etc/sysctl.conf "$destination"
+cp /etc/default/grub "$destination"
