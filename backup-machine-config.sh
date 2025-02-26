@@ -19,9 +19,6 @@ fi
 # system infomation
 hostnamectl > "$destination/hostnamectl.txt"
 
-# kernel information
-sysctl -a > "$destination/sysctl.txt"
-
 
 # Disk & partition information
 fdisk --list-details	> "$destination/fdisk-list-details.txt"
