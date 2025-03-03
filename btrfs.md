@@ -91,9 +91,9 @@ Example output from `sudo btrfs subvolume show -h /my-btrfs-partition`:
 	Receive transid:    0
 	Receive time:       -
 	Snapshot(s):
-						my-subvolume1
-						my-subvolume2
-						snapshot-dir
+	                    my-subvolume1
+	                    my-subvolume2
+	                    snapshot-dir
 	Quota group:        n/a
 ```
 Child subvolumes have the root subvolume as their parent - `sudo btrfs subvolume show -h my-subvolume1`:
