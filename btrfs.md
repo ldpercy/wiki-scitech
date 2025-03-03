@@ -65,7 +65,7 @@ sudo btrfs subvolume list -a -t /my-btrfs-partition
 	1002    50002   5               my-subvol2
 	1003    50003   5               snapshot-dir
 	4001    70001   1527            <FS_TREE>/snapshot-dir/my-subvol1.snapshot
-	4002    70002   1527            <FS_TREE>/snapshot-dir/my-subvol1.snapshot
+	4002    70002   1527            <FS_TREE>/snapshot-dir/my-subvol2.snapshot
 ```
 
 ### Subvolume information
@@ -74,49 +74,49 @@ The base btrfs partition is the 'root' subvolume.
 
 Example output from `sudo btrfs subvolume show -h /my-btrfs-partition`:
 ```
-	/
-		Name:				<FS_TREE>
-		UUID:				[...]
-		Parent UUID:		-
-		Received UUID:		-
-		Creation time:		[...]
-		Subvolume ID:		5
-		Generation:			12345
-		Gen at creation:	0
-		Parent ID:			0
-		Top level ID:		0
-		Flags:			-
-		Send transid:		0
-		Send time:			[...]
-		Receive transid:	0
-		Receive time:		-
-		Snapshot(s):
-							my-subvolume1
-							my-subvolume2
-							snapshot-dir
-		Quota group:		n/a
+/
+	Name:               <FS_TREE>
+	UUID:               [...]
+	Parent UUID:        -
+	Received UUID:      -
+	Creation time:      [...]
+	Subvolume ID:       5
+	Generation:         12345
+	Gen at creation:    0
+	Parent ID:          0
+	Top level ID:       0
+	Flags:              -
+	Send transid:       0
+	Send time:          [...]
+	Receive transid:    0
+	Receive time:       -
+	Snapshot(s):
+						my-subvolume1
+						my-subvolume2
+						snapshot-dir
+	Quota group:        n/a
 ```
 Child subvolumes have the root subvolume as their parent - `sudo btrfs subvolume show -h my-subvolume1`:
 ```
-	my-subvolume
-		Name: 				my-subvolume1
-		UUID: 				[...]
-		Parent UUID: 		[...]
-		Received UUID: 		-
-		Creation time: 		[...]
-		Subvolume ID: 		1001
-		Generation: 		50001
-		Gen at creation: 	40001
-		Parent ID: 			5
-		Top level ID: 		5
-		Flags: 				-
-		Send transid: 		0
-		Send time: 			[...]
-		Receive transid: 	0
-		Receive time: 		-
-		Snapshot(s):
-							my-subvolume1.snapshot
-		Quota group:		n/a
+my-subvolume
+	Name:               my-subvolume1
+	UUID:               [...]
+	Parent UUID:        [...]
+	Received UUID:      -
+	Creation time:      [...]
+	Subvolume ID:       1001
+	Generation:         50001
+	Gen at creation:    40001
+	Parent ID:          5
+	Top level ID:       5
+	Flags:              -
+	Send transid:       0
+	Send time:          [...]
+	Receive transid:    0
+	Receive time:       -
+	Snapshot(s):
+	                    my-subvolume1.snapshot
+	Quota group:        n/a
 ```
 
 
