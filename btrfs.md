@@ -125,19 +125,19 @@ Common setup for BTRFS as root
 
 Many distros follow this pattern.
 
-The installer creates two subvolumes on the main btrfs partition:
+The installer creates two subvolumes `@` and `@home` on the main btrfs partition:
 
 	ID      gen     top level       path
 	--      ---     ---------       ----
 	123     54321   5               @
 	456     87654   5               @home
 
-Which get mounted in their usual places in `etc/fstab`:
+These subvolumes are mounted at `/` and `/home` in `etc/fstab`:
 
 	UUID=11111111-2222-3333-4444-555555555555    /        btrfs   subvol=@        0    1
 	UUID=66666666-7777-8888-9999-000000000000    /home    btrfs   subvol=@home    0    2
 
-In day-to-day use you never really 'see' these subvolumes, they're entirely transparent.
+In day-to-day use you never really 'see' the subvolumes, they're entirely transparent.
 
 Timeshift will snapshot the `@` subvolume according to your schedule with names like:
 
@@ -147,7 +147,7 @@ Apt will automatically take snapshots during distribution-upgrades as:
 
 	@apt-snapshot-release-upgrade-foobar-2025-01-01_01:01:01
 
-NB while the timeshift GUI is running these snapshots are visible under `/run/timeshift/`.
+NB while the Timeshift GUI is running these snapshots are visible under `/run/timeshift/`.
 
 
 Snapshots
@@ -157,7 +157,7 @@ Tools such as Timeshift and btrbk make this easier.
 
 Via commandline:
 
-	sudo btrfs subvolume snapshot /btrfs-parition/subvolume-name  /btrfs-parition/subvolume-name.snapshot
+	sudo btrfs subvolume snapshot /btrfs-partition/subvolume-name  /btrfs-partition/subvolume-name.snapshot
 
 
 Manual Rollback of `@`
