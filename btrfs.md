@@ -64,8 +64,8 @@ sudo btrfs subvolume list -a -t /my-btrfs-partition
 	1001    50001   5               my-subvol1
 	1002    50002   5               my-subvol2
 	1003    50003   5               snapshot-dir
-	4001    70001   1527            <FS_TREE>/snapshot-dir/my-subvol1.snapshot
-	4002    70002   1527            <FS_TREE>/snapshot-dir/my-subvol2.snapshot
+	4001    70001   1003            <FS_TREE>/snapshot-dir/my-subvol1.snapshot
+	4002    70002   1003            <FS_TREE>/snapshot-dir/my-subvol2.snapshot
 ```
 
 ### Subvolume information
@@ -91,15 +91,15 @@ Example output from `sudo btrfs subvolume show -h /my-btrfs-partition`:
 	Receive transid:    0
 	Receive time:       -
 	Snapshot(s):
-	                    my-subvolume1
-	                    my-subvolume2
+	                    my-subvol1
+	                    my-subvol2
 	                    snapshot-dir
 	Quota group:        n/a
 ```
 Child subvolumes have the root subvolume as their parent - `sudo btrfs subvolume show -h my-subvolume1`:
 ```
-my-subvolume
-	Name:               my-subvolume1
+my-subvol1
+	Name:               my-subvol1
 	UUID:               [...]
 	Parent UUID:        [...]
 	Received UUID:      -
@@ -115,7 +115,7 @@ my-subvolume
 	Receive transid:    0
 	Receive time:       -
 	Snapshot(s):
-	                    my-subvolume1.snapshot
+	                    my-subvol1.snapshot
 	Quota group:        n/a
 ```
 
