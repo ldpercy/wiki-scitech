@@ -19,6 +19,22 @@ See caveats regarding git's iso8601 formatting here:
 https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats/26961614#26961614
 
 
+
+Convert a sequence of commits to branch
+---------------------------------------
+https://stackoverflow.com/questions/364925/is-it-possible-to-retroactively-turn-a-set-of-commits-into-a-branch
+
+
+If you want all the commits *after* revision XXX to have happened in a branch:
+
+	$ git branch new-branch-name      # create the new branch
+	$ git reset --hard XXX            # reset current branch to commit XXX
+
+Force push to remote:
+
+	$ git push --force origin current-branch
+
+
 Deleted Files
 -------------
 
