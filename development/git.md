@@ -33,6 +33,15 @@ Caveats regarding git's iso8601 formatting:
 https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats/26961614#26961614
 
 
+Branches
+--------
+
+
+Show branches with their upstreams:
+
+	git branch -vv
+
+
 
 Remotes
 -------
