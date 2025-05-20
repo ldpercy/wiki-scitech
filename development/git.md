@@ -34,16 +34,21 @@ https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats/2
 
 
 
-List remotes
-------------
+Remotes
+-------
+
+### List
 
 	git remote --verbose
 
-View and change remote URLs:
+### View and change remote URLs:
 
 	git remote get-url remoteName
 	git remote set-url remoteName remoteUrl
 
+### Rename a remote
+
+	git remote rename <old-name> <new-name>
 
 
 Remote on local filesystem
@@ -115,8 +120,8 @@ https://git-scm.com/docs/git-am				git apply mail
 
 
 
-Convert a sequence of commits to branch
----------------------------------------
+Convert a sequence of commits to a branch
+-----------------------------------------
 https://stackoverflow.com/questions/364925/is-it-possible-to-retroactively-turn-a-set-of-commits-into-a-branch
 
 
@@ -139,9 +144,6 @@ git log --diff-filter=D --format=reference
 ```
 
 
-
-
-
 Repository filtering - git-filter-repo
 --------------------------------------
 
@@ -156,7 +158,6 @@ sudo apt install git-filter-repo
 ```
 
 
-
 To only keep a specific directory (from a local copy):
 
 ```bash
@@ -168,8 +169,6 @@ To exclude a specific directory (from a local copy):
 ```bash
 git-filter-repo --force --invert-paths --path directoryName
 ```
-
-
 
 
 Pre-commit hooks
