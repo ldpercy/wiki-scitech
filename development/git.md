@@ -99,6 +99,14 @@ If the commit was already pushed, do a force push as well:
 https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
 
 
+Tags
+----
+
+Signed tag:
+
+	git tag -s "v1.2.3" -m "Tag message"
+
+
 
 Storing Binaries
 ----------------
